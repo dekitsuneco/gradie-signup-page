@@ -12,25 +12,19 @@
   
   .signup-preview-content {
     color: white;
+    text-align: center;
 
-    .signup-preview-header {
-      text-align: center;
-
-      &__title {
-        padding-bottom: .65rem;
-
-        font-weight: 700;
-        font-size: 2.2rem;
-      }
-      
-      &__description {
-        opacity: .5;
-      }
+    &__title {
+      padding-bottom: .65rem;
+      font-weight: 700;
+      font-size: 2.2rem;
     }
     
-    .signup-preview-image{
+    &__description {
+      opacity: .5;
     }
   }
+
 }
 
 

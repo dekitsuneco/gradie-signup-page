@@ -1,12 +1,37 @@
 @import './nullify.scss';
 
-$content-padding: 2.5rem 2rem;
+$content-padding: 2.7rem 18%;
+$content-padding-tablet: 2.7rem 4.8rem;
+
 $border-radius: 5px;
 
+$tablet-width: 415px;
+
+body {
+  background-image: url('../assets/images/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
 .signup {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 0;
+  
+  box-shadow: .5px .5px 3rem 1.5px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: $tablet-width) {
+    height: auto;
+    max-width: $tablet-width;
+    margin: 1.8rem auto;
+  }
+
   .signup-preview {
     padding: $content-padding;
-    padding-bottom: 65vh;
+    padding-bottom: 25.5rem;
 
     background-color: rgb(1,50,67);
     background-image: url('../assets/images/iPhone Mockup.png');
@@ -14,6 +39,12 @@ $border-radius: 5px;
     background-position: bottom center;
     background-size: contain;
     border-bottom: .5px solid gray;
+
+    @media (min-width: 450px) {
+      max-width: 28.12rem;
+      padding: $content-padding-tablet;
+      padding-bottom: 25.4rem;
+    }
 
     .signup-preview-content {
       color: white;
@@ -35,10 +66,16 @@ $border-radius: 5px;
 
   .signup-body {
     background-color: rgb(255,255,255);
+    height: 100%;
 
     .signup-body-content {
       padding: $content-padding;
+
       text-align: left;
+
+      @media (min-width: 450px) {
+        padding: $content-padding-tablet;
+      }
 
       &__title {
         padding-bottom: 1.8rem;

@@ -1,48 +1,103 @@
 @import './nullify.scss';
 
+$content-padding: 2.5rem 2rem;
+$border-radius: 5px;
 
-.signup-preview {
-  padding: 2.5rem 2rem 60vh 2rem;
+.signup {
+  .signup-preview {
+    padding: $content-padding;
+    padding-bottom: 65vh;
 
-  background-color: rgb(1,50,67);
-  background-image: url('../assets/images/iPhone Mockup.png');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: contain;
-  
-  .signup-preview-content {
-    color: white;
-    text-align: center;
+    background-color: rgb(1,50,67);
+    background-image: url('../assets/images/iPhone Mockup.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    border-bottom: .5px solid gray;
 
-    &__title {
-      padding-bottom: .65rem;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-    
-    &__description {
-      opacity: .5;
+    .signup-preview-content {
+      color: white;
+      text-align: center;
+
+      &__title {
+        padding-bottom: .65rem;
+
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+
+      &__description {
+        opacity: .5;
+      }
     }
   }
 
+
+  .signup-body {
+    background-color: rgb(255,255,255);
+
+    .signup-body-content {
+      padding: $content-padding;
+      text-align: left;
+
+      &__title {
+        padding-bottom: 1.8rem;
+        
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+
+      &__form {
+        font-weight: 600;
+
+        input:not([type=checkbox]) {
+          display: block;
+          width: 100%;
+          padding: 1rem;
+          margin-top: .55rem;
+
+          border: .5px solid gray;
+          border-radius: $border-radius;
+        }
+
+        &-section {
+          padding-bottom: 1.3rem;
+        }
+
+        .conditions {
+          display: flex;
+          align-items: baseline;
+
+          label {
+          display: inline-block;
+          width: 70%;
+          padding-left: .3rem;
+
+          font-weight: 500;
+          line-height: 1.4rem;
+          }
+          
+          a {
+            font-weight: 600;
+            color: rgb(1,50,67);
+            text-decoration: underline;
+          }
+        }
+
+        &-btn {
+          width: 100%;
+          padding: 1rem;
+
+          background-color: rgb(1,50,67);
+          color: rgb(255,255,255);
+          font-weight: 600;
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
 }
 
-
-.conditions {}
-
-.email {}
-
-.password {}
-
-.signup {}
-
-.signup-body {
-  &__form {}
-
-  &__title {}
-}
-
-.signup-body-content {}
 
 
 

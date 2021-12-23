@@ -1,35 +1,56 @@
 @import './nullify.scss';
 
 
-.signup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.signup-preview {
+  padding: 2.5rem 2rem 60vh 2rem;
 
-  .signup-media {
+  background-color: rgb(1,50,67);
+  background-image: url('../assets/images/iPhone Mockup.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  
+  .signup-preview-content {
+    color: white;
 
-    &__header {}
-      &__title {}
-      &__description {}
+    .signup-preview-header {
+      text-align: center;
+
+      &__title {
+        padding-bottom: .65rem;
+
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
       
-    &__img {}
-  }
-
-  .signup-page {
-
-
-    &__title {}
-
-    &__form {}
+      &__description {
+        opacity: .5;
+      }
+    }
+    
+    .signup-preview-image{
+    }
   }
 }
 
-.login-form {
-  &__email {}
-  
-  &__pwd {}
-  
-  &__conditions {}
+
+.conditions {}
+
+.email {}
+
+.password {}
+
+.signup {}
+
+.signup-body {
+  &__form {}
+
+  &__title {}
 }
+
+.signup-body-content {}
+
+
+
 
 

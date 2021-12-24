@@ -133,6 +133,9 @@ body {
   @extend %section-sizes-mobile;
 
 
+  background-color: rgb(255, 255, 255);
+
+
   @media (min-width: $mobile-width-big) {
     @include section-sizes-mobile-big;
   }

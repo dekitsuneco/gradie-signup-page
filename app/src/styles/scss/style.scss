@@ -43,10 +43,10 @@ body {
   font-family: 'Roboto', sans-serif;
 
   background-image: url('../assets/images/Background.png');
-  background-size: cover;
+  /*background-size: cover;*/
+  background-size: cover contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
 }
 
 .signup {

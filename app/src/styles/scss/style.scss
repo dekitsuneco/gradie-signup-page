@@ -1,5 +1,265 @@
 @import './nullify.scss';
 
+/* 320 - 375 - 450 */
+$mobile-width-small: 320px; 
+$mobile-width-big: 375px; 
+/* 450 - 768 - 1024 */
+$tablet-width: 450px;
+/* 1024 */
+$laptop-width: 1024px; 
+
+@mixin circle-borders {
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+%title-font {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+%section-sizes-mobile {
+  min-height: 510px;
+  padding: 2.5rem;
+  padding-bottom: 0; /*60vh*/
+}
+
+@mixin section-sizes-mobile-big {
+  max-height: 585px;
+}
+
+@mixin section-sizes-tablet {
+  padding-bottom: 0; /*540*/ /*DONE*/
+}
+
+@mixin section-sizes-laptop {
+  flex: 0 0 50%;
+}
+
+
+body {
+  background-image: url('../assets/images/Background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  max-width: 450px;
+  height: 100%;
+  
+
+  background-color: rgb(255, 255, 255);
+  box-shadow: .5px .5px 3rem 1.5px rgba(0, 0, 0, 0.5);
+
+
+  @media (min-width: $tablet-width) {
+    height: auto;
+    margin: 1vh auto;
+
+    border-radius: 0px 0px 7px 7px;
+  }
+  
+  @media (min-width: $laptop-width) {
+    flex-direction: row;
+    max-width: 900px;
+    margin: 3rem auto;
+
+    @include circle-borders;
+  }
+
+
+  .signup-preview {
+    @extend %section-sizes-mobile;
+
+
+    background-color: rgb(1,50,67);
+    background-image: url('../assets/images/iPhone Mockup.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 120% auto;
+
+    color: white;
+    text-align: center;
+    line-height: 1.5rem;
+
+    border-bottom: .5px solid whitesmoke;
+
+
+    @media (min-width: $mobile-width-big) {
+      @include section-sizes-mobile-big;
+
+
+      background-size: 450px auto;
+    }
+
+    @media (min-width: $tablet-width) {
+      @include section-sizes-tablet;
+    }
+
+    @media (min-width: $laptop-width) { 
+      @include section-sizes-laptop;
+
+
+      border: none;
+    }
+
+    .signup-preview-content {
+      &__title {
+        padding-bottom: .7rem;
+
+
+        @extend %title-font;
+      }
+
+      &__description {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+
+.signup-body {
+  @extend %section-sizes-mobile;
+
+
+  @media (min-width: $mobile-width-big) {
+    @include section-sizes-mobile-big;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-right: 4.5rem;
+    padding-left: 4.5rem;
+    @include section-sizes-tablet
+  }
+
+  @media (min-width: $laptop-width) { 
+    @include section-sizes-laptop;
+  }
+
+
+  .signup-body-content {
+    &__title {
+      padding-bottom: 2.2rem;
+
+
+      @extend %title-font;
+    }
+
+    &__form {
+      font-weight: 600;
+
+      input:not([type=checkbox]) {
+        display: block;
+        width: 100%;
+        padding: 1.2rem 1rem;
+        margin-top: .55rem;
+
+
+        border: .5px solid gray;
+        @include circle-borders;
+      }
+
+      &-section {
+        padding-bottom: 1.7rem;
+      }
+
+      .conditions {
+        display: flex;
+        align-items: baseline;
+
+        label {
+        display: inline-block;
+        width: 85%;
+        padding-left: .5rem;
+
+
+        font-weight: 500;
+        line-height: 1.45rem;
+
+          @media (min-width: $mobile-width-big) {
+            width: 68%;
+          }
+
+          @media (min-width: $tablet-width) {
+            width: 75%;
+          }
+        }
+        
+        a {
+          font-weight: 600;
+          color: rgb(1,50,67);
+          text-decoration: underline;
+        }
+      }
+
+      &-btn {
+        width: 100%;
+        padding: 1.2rem 1rem;
+
+
+        background-color: rgb(1,50,67);
+        color: rgb(255,255,255);
+        font-weight: 600;
+
+        @include circle-borders;
+      }
+    }
+  }
+}
+
+footer {
+  height: 1px;
+}
+
+
+/*
+    &__form {
+
+
+
+
+
+      .conditions {
+        display: flex;
+        align-items: baseline;
+
+        label {
+        display: inline-block;
+        width: 70%;
+        padding-left: .3rem;
+
+        font-weight: 500;
+        line-height: 1.4rem;
+        }
+        
+        a {
+          font-weight: 600;
+          color: rgb(1,50,67);
+          text-decoration: underline;
+        }
+      }
+
+      &-btn {
+        width: 100%;
+        padding: 1rem;
+
+        background-color: rgb(1,50,67);
+        color: rgb(255,255,255);
+        font-weight: 600;
+      }
+    }
+
+*/
+
+
+/*
 $content-padding: 2.7rem 18%;
 $content-padding-tablet: 2.7rem 4.8rem;
 
@@ -14,20 +274,28 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+
 .signup {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 0;
   
   box-shadow: .5px .5px 3rem 1.5px rgba(0, 0, 0, 0.5);
 
   @media (min-width: $tablet-width) {
     height: auto;
     max-width: $tablet-width;
-    margin: 1.8rem auto;
+    margin: 1.7rem auto;
   }
+
+  @media (min-width: 1024px) {
+    max-width: 850px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+
 
   .signup-preview {
     padding: $content-padding;
@@ -40,10 +308,14 @@ body {
     background-size: contain;
     border-bottom: .5px solid gray;
 
-    @media (min-width: 450px) {
+    @media (min-width: $tablet-width) {
       max-width: 28.12rem;
       padding: $content-padding-tablet;
       padding-bottom: 25.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      min-width: 50%;
     }
 
     .signup-preview-content {
@@ -65,16 +337,30 @@ body {
 
 
   .signup-body {
-    background-color: rgb(255,255,255);
     height: 100%;
 
+    background-color: rgb(255,255,255);
+
+    @media (min-width: 1024px) {
+      min-width: 50%;
+      height: auto;
+    }
+
     .signup-body-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       padding: $content-padding;
 
       text-align: left;
 
       @media (min-width: 450px) {
         padding: $content-padding-tablet;
+      }
+
+      @media (min-width: 1024px) {
+        height: 100%;
+        padding: 2.7rem 4rem 0 4rem;
       }
 
       &__title {
@@ -135,8 +421,14 @@ body {
   }
 }
 
+footer {
+  height: 1px;
+}
 
 
 
 
 
+
+
+*/

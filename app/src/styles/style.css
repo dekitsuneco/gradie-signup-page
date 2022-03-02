@@ -110,12 +110,24 @@ h6 {
 }
 
 body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
   font-family: "Roboto", sans-serif;
   background-image: url("../assets/images/Background.png");
   /*background-size: cover;*/
   background-size: cover contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup {

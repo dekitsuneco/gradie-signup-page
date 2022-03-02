@@ -142,7 +142,7 @@ main {
 @media (min-width: 450px) {
   .signup {
     height: auto;
-    margin: 1vh auto;
+    margin: 3vh auto;
     border-radius: 0px 0px 7px 7px;
   }
 }
